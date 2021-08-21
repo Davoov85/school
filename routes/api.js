@@ -38,5 +38,29 @@ apiRouter.post('/meal', async function(req, res) {
    res.status(200).send(responseBody);
  });
 
+ apiRouter.post('/calendar', async function(req, res) {
+  //  const result = await example();
+  //const dateInfo = req.body.userRequest.utterance; 
+
+  const calendar = await school.getCalendar({default: '이 날은 일정이 없습니다.'});
+  const printing = calendar[dateInfo]
+  console.log(req.body);
+  
+  const responseBody = {
+    version: "2.0",
+    template: {
+      outputs: [
+        {
+          simpleText: {
+            text: `${meal.month}월 ${dateInfo}일 학사일정 \n` + printing
+          }
+        }
+      ]
+    }
+  };
+
+  res.status(200).send(responseBody);
+});
+
 
 module.exports = apiRouter;
