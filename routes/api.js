@@ -40,10 +40,10 @@ apiRouter.post('/meal', async function(req, res) {
 
  apiRouter.post('/calendar', async function(req, res) {
   //  const result = await example();
-  const dateInfo = req.body.userRequest.utterance; 
+  //const dateInfo = req.body.userRequest.utterance; 
 
-  const calendar = await school.getCalendar({default: '이 날은 일정이 없습니다.'});
-  const printing = calendar[dateInfo]
+  const calendar = await school.getCalendar({default: '이 날은 일정이 없습니다.', separator: '\n'});
+  const print = calendar
   console.log(req.body);
   
   const responseBody = {
@@ -52,7 +52,7 @@ apiRouter.post('/meal', async function(req, res) {
       outputs: [
         {
           simpleText: {
-            text: printing
+            text: `${meal.month}월 \n` + print
           }
         }
       ]
