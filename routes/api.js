@@ -52,7 +52,7 @@ apiRouter.post('/meal', async function(req, res) {
       outputs: [
         {
           simpleText: {
-            text: `${meal.month}월 ${dateInfo}일 학사일정 \n` + printing
+            text: printing
           }
         }
       ]
