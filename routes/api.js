@@ -43,7 +43,7 @@ apiRouter.post('/meal', async function(req, res) {
   const dateInfo = req.body.userRequest.utterance; 
 
   const meal = await school.getMeal({default: '이 날은 급식이 없습니다.'});
-  const printing = meal.today
+  const printing = meal
   console.log(req.body);
   
   const responseBody = {
