@@ -3,7 +3,7 @@ const apiRouter = require("express").Router();
 const School = require('school-kr')
 const school = new School()
 
-school.init(School.Type.HIGH, School.Region.GYEONGGI, 'J100005286')
+school.init(School.Type.HIGH, School.Region.GYEONGGI, 'J100000818')
 // const example = async function() {
 //   const meal = await school.getMeal();
 //   return(밥)
